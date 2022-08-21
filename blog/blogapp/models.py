@@ -11,6 +11,7 @@ class Author(models.Model):
         max_length=50, blank=False, help_text="Author's Last name")
     author_email = models.EmailField(
         blank=False, unique=True, help_text='Author email id')
+    author_biodata = models.TextField(max_length=250, blank=True, null=True)
 
     def __str__(self) -> str:
         return self.author_first_name + ' ' + self. author_last_name
