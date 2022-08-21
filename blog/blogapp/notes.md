@@ -11,3 +11,5 @@ example: authors/TarunPatibandla/
          authors/Tarun-Patibandla/ #slugs
 
 /authors/<id>/blogs/ method = 'GET' : get blogs of author
+
+/authors/slugid/
