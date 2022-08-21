@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+{% block content%}
+
+
+
+<div class="card" style="width: 100%;">
+    <div class="card-header">
+        Blogs
+    </div>
+    <ul class="list-group list-group-flush" style="margin: 5px;">
+
+
+
+        {%for blog in blogs%}
+
+        <li class="list-group-item">
+            <h2> {{blog.blog_title}} </h2>
+
+            <h4> By: {{blog.blog_author}} </h4>
+            <p> {{blog.blog_content}} </p>
+
+            <p> Published on: {{blog.blog_create_date}}</p>
+            <p>Last Updated: {{blog.blog_update_date}}</p>
+        </li>
+        {%endfor%}
+
+    </ul>
+</div>
+
+{% endblock %}

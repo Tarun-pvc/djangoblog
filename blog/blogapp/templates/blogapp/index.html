@@ -1,0 +1,19 @@
+{% extends './base.html' %}
+
+{%block content%}
+<h1>BLOG</h1>
+
+{%for blog in blogs%}
+
+
+<h1> Title: {{blog.blog_title}} </h1>
+<h4> By: {{blog.blog_author}} </h4>
+<a href="{% url 'authorblogs' blog.blog_author.id %}">{{blog.blog_author.id}}</a>
+<p> {{blog.blog_content}} </p>
+
+<p> Published on: {{blog.blog_create_date}}</p>
+<p>Last Updated: {{blog.blog_update_date}}</p>
+
+{%endfor%}
+
+{%endblock%}

@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+<h1>Meet our authors: </h1>
+
+
+{%for author in authors%}
+<a href="{% url 'authorblogs' author.id %}">
+    <h3>{{author.author_first_name}} {{author.author_last_name}}</h3>
+</a>
+<h6>Author Email id: {{author.author_email}}</h6>
+{%endfor%}
+
+{% endblock %}
