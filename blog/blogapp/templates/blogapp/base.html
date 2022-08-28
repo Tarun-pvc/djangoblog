@@ -46,6 +46,12 @@
                     </li> -->
 
                 </ul>
+                {{request.user.username}}
+                {% if request.user.username%}
+                <strong>Welcome, {{ request.user | title}}!</strong>
+                {% else %}
+                <strong>Welcome! </strong>
+                {% endif %}
                 <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>

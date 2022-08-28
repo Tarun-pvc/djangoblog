@@ -2,10 +2,8 @@
 {% load static %}
 {% block content %}
 
-
+<!-- request.user displays my name or whatever username thats logged in at the moment -->
 <h1>Meet our authors: </h1>
-
-
 {%for author in authors%}
 {% if author.author_image%}
 
