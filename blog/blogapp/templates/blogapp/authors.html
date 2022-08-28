@@ -1,14 +1,25 @@
 {% extends './base.html' %}
-
+{% load static %}
 {% block content %}
+
 
 <h1>Meet our authors: </h1>
 
 
 {%for author in authors%}
+{% if author.author_image%}
+
+<img src="{{ author.author_image.url }}" alt="" width=50px>
+{% else %}
+
+
+<img src="{%static 'blogapp/Catimage.jpg'%}" alt="" width=50px>
+
+{% endif%}
 <a href="{% url 'authorblogs' author.id %}">
     <h3>{{author.author_first_name}} {{author.author_last_name}}</h3>
 </a>
+
 <h6>Author Email id: {{author.author_email}}</h6>
 {%endfor%}
 

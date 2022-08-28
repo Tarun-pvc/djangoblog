@@ -12,6 +12,8 @@ class Author(models.Model):
     author_email = models.EmailField(
         blank=False, unique=True, help_text='Author email id')
     author_biodata = models.TextField(max_length=250, blank=True, null=True)
+    author_image = models.ImageField(
+        upload_to='authors/', null=True, blank=True)
 
     def __str__(self) -> str:
         return self.author_first_name + ' ' + self. author_last_name
