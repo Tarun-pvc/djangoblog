@@ -1,18 +1,25 @@
 {% extends './base.html' %}
 
 {%block content%}
-<h1>BLOG</h1>
+<h1>
+
+
+</h1>
 
 {%for blog in blogs%}
 
-
-<h1> Title: {{blog.blog_title}} </h1>
-<h4> By: {{blog.blog_author}} </h4>
-<a href="{% url 'authorblogs' blog.blog_author.id %}">{{blog.blog_author.id}}</a>
+<h1 style="color: rgb(76, 0, 127); font-weight: bold;"> {{blog.blog_title}} </h1>
+By: <a href="{% url 'authorblogs' blog.blog_author.id %}">
+    <h4 style="color: rgb(220, 0, 136); font-weight: bolder;"> {{blog.blog_author}} </h4>
+</a>
 <p> {{blog.blog_content}} </p>
+
+<p>Likes: {{blog.blog_likes}}</p>
 
 <p> Published on: {{blog.blog_create_date}}</p>
 <p>Last Updated: {{blog.blog_update_date}}</p>
+
+<hr style="height: 20px; border: 0;background-color: darkblue;">
 
 {%endfor%}
 

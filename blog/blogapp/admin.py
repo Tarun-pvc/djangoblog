@@ -38,7 +38,7 @@ class BlogAdmin(admin.ModelAdmin):
         ),
         (
             'Content', {
-                'fields': ('blog_content',)
+                'fields': ('blog_content', 'blog_likes')
             }
         ),
     )

@@ -4,19 +4,35 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BLOG</title>
+    <title>Toosh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 
-<body>
+<style>
+    body {
+        color: rgba(0, 0, 0, 0.769);
+        /* background-image: url('static/blogapp/canvas3.jpg'); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-weight: bold;
+    }
 
-    {%load static%}
-    <img src="{% static 'blogapp/Catimage.jpg' %}" alt="cat" width=100px>
+    .navbarimg {
+        background: transparent;
+    }
+</style>
+
+<body>
+    <!-- {%load static%}
+    <img src="{% static 'blogapp/Catimage.jpg' %}" alt="cat" width=100px> -->
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Blogs</a>
+            {% load static %}
+            <a class="navbar-brand" href="#"><img src="{%static 'blogapp/images.jpeg'%}" alt="" width=50px
+                    class="navbarimg"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -25,10 +41,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Blogs</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}"
+                            style="font-family: 'Courier New', monospace; color:rgb(255, 168, 62); font-size: x-large; font-weight: bold;">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'authors' %}">Authors</a>
+                        <a class="nav-link" href="{% url 'authors' %}"
+                            style="font-family:'Courier New', Courier, monospace;color:rgb(5, 71, 35); font-size: x-large; font-weight: bold; background-color: rgb(209, 65, 209);">Authors</a>
                     </li>
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -46,12 +64,12 @@
                     </li> -->
 
                 </ul>
-                {{request.user.username}}
                 {% if request.user.username%}
-                <strong>Welcome, {{ request.user | title}}!</strong>
+                <strong>Welcome, {{ request.user | title}}!</strong> 
+                <!-- title just makes the first letter capital -->
                 {% else %}
                 <strong>Welcome! </strong>
-                {% endif %}
+                {% endif %} 
                 <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>

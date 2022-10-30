@@ -1,5 +1,5 @@
 from django.db import models
-from sqlalchemy import false
+
 
 # Create your models here.
 
@@ -30,6 +30,7 @@ class Blog(models.Model):  # models.Model imports some special django-specific f
     blog_update_date = models.DateTimeField(auto_now=True)
     blog_author = models.ForeignKey(
         Author, on_delete=models.CASCADE, blank=False)
+    blog_likes = models.IntegerField(editable=True, default=10)
 
     def __str__(self) -> str:
         return self.blog_title
