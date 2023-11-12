@@ -55,4 +55,4 @@ class BookAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Author, AuthorAdmin)
-# admin.site.register(Blog, BlogAdmin)
+# admin.site.register(Blog, BlogAdmin) This is a test.
